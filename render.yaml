@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: shareautotaxfiling
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: PHONEPE_CLIENT_ID
+        value: SHAREAUTOONLINE
+      - key: PHONEPE_CLIENT_SECRET
+        value: 825dcbac-ac41-49b7-9ede-ece4e23af0ee
+      - key: PHONEPE_CLIENT_VERSION
+        value: "1"
+      - key: REDIRECT_URL
+        value: https://shareautotaxfiling.onrender.com/success
